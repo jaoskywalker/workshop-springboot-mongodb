@@ -46,4 +46,10 @@ public class PostResources {
 		List<Post> list = service.fullSearch(text, min, max);
 		return ResponseEntity.ok().body(list);
 	}
+	
+	@RequestMapping(value = "/all", method = RequestMethod.GET)
+	public ResponseEntity<List<Post>> allPosts(){
+		List<Post> list = service.allPosts();
+		return ResponseEntity.ok().body(list);
+	}
 }
